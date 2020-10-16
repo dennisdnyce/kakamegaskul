@@ -138,6 +138,21 @@ tr:nth-child(even){background-color: ;
 		border-radius: 6px 0 6px 6px;
 	}
 	
+<<<<<<< HEAD
+=======
+@keyframes example {
+  		10%   {color: green;}
+  		25%  {color: maroon;}
+  		50%  {color: #d9a225;}
+  		100% {color: black;}
+}
+
+@media (max-width: 480px){
+	p.blinker {
+		display: none;
+	}
+}	
+>>>>>>> 6366b1912848e4d82077d283e1dba0403760f819
 	</style>
 
 </head>
@@ -153,9 +168,14 @@ tr:nth-child(even){background-color: ;
 			</div>
 			<br/>
 	
+<<<<<<< HEAD
 			<div class="w3_search" style="margin-left:;">
 				 <p style="font-size:20px; margin-left:15px;"><img height="50px" width="50px" src="{% static 'images/rib.jpg' %}" />IN<font style="color: #f3f1f1;">_</font>UNITY<font style="color: #f3f1f1;">_</font>IS<font style="color: #f3f1f1;">_</font>STRENGTH<img height="50px" width="50px" src="{% static 'images/rib.jpg' %}" /></p>
                          <p style=""><img height="100px" width="400px" src="{% static 'images/yellows.jpg' %}" /></p>  
+=======
+			<div class="w3_search" style="animation-duration: 8s; animation-iteration-count: infinite; animation-name: example;">
+				 <p class="blinker" style="font-size:30px; margin-left:-60px;"><img height="50px" width="50px" src="{% static 'images/rib.jpg' %}" />IN<font style="color: #f3f1f1;">_</font>UNITY<font style="color: #f3f1f1;">_</font>IS<font style="color: #f3f1f1;">_</font>STRENGTH<img height="50px" width="50px" src="{% static 'images/rib.jpg' %}" /></p> 
+>>>>>>> 6366b1912848e4d82077d283e1dba0403760f819
 			</div>
 			<div class="w3l_sign_in_register">
 				{% block general_head %}
