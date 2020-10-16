@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block logo %}
+   {% for school_general_information in scorer %}
+   <a href="{% url 'home' %}"><img class="welcome" src="{{ school_general_information.school_logo.url }}" height="150" width="150" alt=" "></a>
+   {% endfor %}
+{% endblock %}
+
+{% block general_head %}
+        {% for school_general_information in scorer %}
+        <ul>
+        <li><i class="fa fa-phone" aria-hidden="true"></i> <strong>{{ school_general_information.school_phone_number|safe }}</strong></li>
+        <li><img src="{{ school_general_information.mail_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_emailaddress }}</strong></li>
+          <li><img src="{{ school_general_information.address_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_address }}</strong></li>
+        </ul>
+        {% endfor %}
+{% endblock %}
+
+{% block social_links %}
+  <nav class="social">
+  <ul>
+    {% for school_general_information in scorer %}
+    <li class="w3_twitter"><a href="{{ school_general_information.school_twitterlink }}" target="_blank">Twitter <i class="fa fa-twitter"></i></a></li>
+    <li class="w3_facebook"><a href="{{ school_general_information.school_facebooklink }}" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
+    {% endfor %}
+  </ul>
+  </nav>
+{% endblock %}
+
+
+{% block home_content %}
+<center><h4 class="latest-text w3_latest_text" style="font-family:monotype corsiva;"><strong><u></u></strong></h4></center>
+<div class="container">
+  <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+    <div id="myTabContent" class="tab-content">
+      <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+        <div class="w3_agile_featured_movies">
+          <div class="wthree-news-left">
+            <div class="wthree-news-left-img">
+
+            <center><p style="width:100%; opacity:0.8; font-size:20px; color:#000000;">You searched for: <strong>{{ query }}</strong></p></center>
+            {% if updated %}
+            <center><p style="opacity:0.8; font-size:20px; color:#000000;">Found {{ updated|length }} result{{ updated|pluralize }}.</p></center>
+            <ul style="list-style-type: none;">
+                {% for school_updates in updated %}
+                <center><li style="opacity:0.8; font-size:35px; color:#000000; text-decoration:none">{{ school_updates.news_title }}</li></center>
+                {% endfor %}
+            </ul>
+
+            {% elif alumnews %}
+            <center><p style="opacity:0.8; font-size:20px; color:#000000;">Found {{ alumnews|length }} result{{ alumnews|pluralize }}.</p></center>
+            <ul style="list-style-type: none;">
+                {% for school_alumnae in alumnews %}
+                <center><li style="opacity:0.8; font-size:35px; color:#000000; text-decoration:none">{{ school_alumnae.name }}</li></center>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            <center><p style="opacity:0.8; font-size:20px; color:#000000;">No results matched your search criteria.</p></center>
+        {% endif %}
+            </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock%}

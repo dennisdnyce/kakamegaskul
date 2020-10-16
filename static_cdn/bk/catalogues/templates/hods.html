@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block logo %}
+   {% for school_general_information in geneids %}
+   <a href="{% url 'home' %}"><img alt="Kakamega school  logo" class="welcome" src="{{ school_general_information.school_logo.url }}" height="150" width="150" alt=" "></a>
+   {% endfor %}
+{% endblock %}
+
+{% block general_head %}
+        {% for school_general_information in geneids %}
+        <ul>
+        <li><i class="fa fa-phone" aria-hidden="true"></i> <strong>{{ school_general_information.school_phone_number|safe }}</strong></li>
+        <li><img alt="Kakamega school  email address" src="{{ school_general_information.mail_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_emailaddress }}</strong></li>
+          <li><img alt="Kakamega school  postal address" src="{{ school_general_information.address_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_address }}</strong></li>
+        </ul>
+        {% endfor %}
+{% endblock %}
+
+{% block social_links %}
+  <nav class="social">
+  <ul>
+    {% for school_general_information in geneids %}
+    <li class="w3_twitter"><a href="{{ school_general_information.school_twitterlink }}" target="_blank">Twitter <i class="fa fa-twitter"></i></a></li>
+    <li class="w3_facebook"><a href="{{ school_general_information.school_facebooklink }}" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
+    {% endfor %}
+  </ul>
+  </nav>
+{% endblock %}
+
+{% block home_content %}
+		<h4 class="latest-text w3_latest_text"><strong>Heads of Departments</strong></h4>
+		<div class="container">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#lang" id="lang-tab" role="tab" data-toggle="tab" aria-controls="lang" aria-expanded="true">Languages</a></li>
+          <li role="presentation"><a href="#math" id="math-tab" role="tab" data-toggle="tab" aria-controls="math" aria-expanded="false">Maths</a></li>
+					<li role="presentation"><a href="#scie" role="tab" id="scie-tab" data-toggle="tab" aria-controls="scie" aria-expanded="true">Sciences</a></li>
+					<li role="presentation"><a href="#hum" id="hum-tab" role="tab" data-toggle="tab" aria-controls="hum" aria-expanded="false">Humanities</a></li>
+					<li role="presentation"><a href="#tech" role="tab" id="tech-tab" data-toggle="tab" aria-controls="tech" aria-expanded="true">Technicals</a></li>
+          <li role="presentation"><a href="#board" id="board-tab" role="tab" data-toggle="tab" aria-controls="board" aria-expanded="false">Boarding</a></li>
+					<li role="presentation"><a href="#guide" role="tab" id="guide-tab" data-toggle="tab" aria-controls="guide" aria-expanded="true">Guiding & Counseling</a></li>
+					<li role="presentation"><a href="#game" id="game-tab" role="tab" data-toggle="tab" aria-controls="game" aria-expanded="false">Games</a></li>
+
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade active in" id="lang" aria-labelledby="lang-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_languages_hod in langues %}
+									<img alt="Kakamega school  languages hod" src="{{ school_languages_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_languages_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_languages_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="math" aria-labelledby="math-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_math_hod in maths %}
+									<img alt="Kakamega school  mathematics hod" src="{{ school_math_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_math_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_math_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="scie" aria-labelledby="scie-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_sciences_hod in scies %}
+									<img alt="Kakamega school  sciences hod" src="{{ school_sciences_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_sciences_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_sciences_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="hum" aria-labelledby="hum-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_humanities_hod in hume %}
+									<img alt="Kakamega school  humanities hod" src="{{ school_humanities_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_humanities_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_humanities_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="tech" aria-labelledby="tech-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_technicals_hod in tech %}
+									<img alt="Kakamega school  technical studies hod" src="{{ school_technicals_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_technicals_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_technicals_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="board" aria-labelledby="board-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_boarding_hod in board %}
+									<img alt="Kakamega school  boarding department hod" src="{{ school_boarding_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_boarding_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_boarding_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="guide" aria-labelledby="guide-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_guiding_and_counseling_hod in guide %}
+									<img alt="Kakamega school  guiding and counseling hod" src="{{ school_guiding_and_counseling_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_guiding_and_counseling_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_guiding_and_counseling_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+          <div role="tabpanel" class="tab-pane fade" id="game" aria-labelledby="game-tab">
+						<div class="w3_agile_featured_movies">
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  {% for school_games_hod in game %}
+									<img alt="Kakamega school  games hod" src="{{ school_games_hod.photo.url }}" width="50%" height="auto" alt="" />
+									<div id="fb-root"></div>
+									<div class="w3-agile-news-text">
+										<br/>
+										<h5><b>{{ school_games_hod.name }},</b></h5><br/>
+										<p style="opacity:0.8; font-size:15px; width:100%; color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;"><strong>{{ school_games_hod.few_words|safe }}</strong></p><br/>
+									</div>
+                  {% endfor %}
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
+{% block general_foot %}
+   {% for school_general_information in geneids %}
+ <p>Copyright &copy; <script>document.write( new Date().getFullYear() );</script> <br/>Kakamega school . {{ school_general_information.school_address }}<br/> All Rights Reserved. Designed by <a href="http://pwares.co.ke" target="_blank">pwares</a></p>
+   {% endfor %}
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block logo %}
+   {% for school_general_information in generiu %}
+   <a href="{% url 'home' %}"><img alt="Kakamega school  logo" class="welcome" src="{{ school_general_information.school_logo.url }}" height="150" width="150" alt=" "></a>
+   {% endfor %}
+{% endblock %}
+
+{% block general_head %}
+        {% for school_general_information in generiu %}
+        <ul>
+        <li><i class="fa fa-phone" aria-hidden="true"></i> <strong>{{ school_general_information.school_phone_number|safe }}</strong></li>
+        <li><img alt="Kakamega school  email address" src="{{ school_general_information.mail_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_emailaddress }}</strong></li>
+          <li><img alt="Kakamega school  postal address" src="{{ school_general_information.address_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_address }}</strong></li>
+        </ul>
+        {% endfor %}
+{% endblock %}
+
+{% block social_links %}
+  <nav class="social">
+  <ul>
+    {% for school_general_information in generiu %}
+    <li class="w3_twitter"><a href="{{ school_general_information.school_twitterlink }}" target="_blank">Twitter <i class="fa fa-twitter"></i></a></li>
+    <li class="w3_facebook"><a href="{{ school_general_information.school_facebooklink }}" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
+    {% endfor %}
+  </ul>
+  </nav>
+{% endblock %}
+
+{% block home_content %}
+		<h4 class="latest-text w3_latest_text"><strong>University Transition</strong></h4>
+		<div class="container">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Students that Qualified to Join the Universities</a></li>
+
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+		<div class="agile-news-table">
+      <div style="overflow-x:auto;" >
+			<table >
+				<thead>
+					<tr style="opacity:0.8; font-size:20px; width:100%; font-color:#fffff; background-color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;">
+					<th ><center>Year</center></th>
+          <th ><center>Total Students</center></th>
+					<th ><center>A</center></th>
+					<th ><center>A-</center></th>
+					<th ><center>B+</center></th>
+					<th ><center>B</center></th>
+					<th><center>B-</center></th>
+					<th ><center>C+</center></th>
+					<th ><center>Total Qualified</center></th>
+					</tr>
+				</thead>
+				<tbody>
+
+          {% for school_performance in performu %}
+          <tr style="opacity:0.8; font-size:20px; width:100%; color:#ffffff; background-color:#2b7f43; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;">
+					<td ><center><a style="color:#000000;"href=""><br/>{{ school_performance.kcse_year }}</a></center></td>
+          <td ><center><a style="color:#6e0107;" href=""><br/><strong>{{ school_performance.total_students }}</strong></a></center></td>
+					<td ><center><a style="color:#ffffff;" href=""><br/>{{ school_performance.grades_A_plain }}</a></center></td>
+					<td><center><a style="color:#ffffff;" href=""><br/>{{ school_performance.grades_A_minus }}</a></center></td>
+					<td ><center><a style="color:#ffffff;" href=""><br/>{{ school_performance.grades_B_plus }}</a></center></td>
+					<td ><center><a style="color:#ffffff;" href=""><br/>{{ school_performance.grades_B_plain }}</a></center></td>
+					<td ><center><a style="color:#ffffff;" href=""><br/>{{ school_performance.grades_B_minus }}</a></center></td>
+					<td ><center><a style="color:#ffffff;" href=""><br/>{{ school_performance.grades_C_plus }}</a></center></td>
+					<td ><center><a style="color:#6e0107;" href=""><br/><strong>{{ school_performance.university_qualified }}</strong></a></center></td>
+          </tr>
+          {% endfor %}
+				</tbody>
+			</table>
+      </div>
+		</div>
+	</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

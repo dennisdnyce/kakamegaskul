@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block logo %}
+   {% for school_general_information in generih %}
+   <a href="{% url 'home' %}"><img alt="Kakamega school  logo" class="welcome" src="{{ school_general_information.school_logo.url }}" height="150" width="150" alt=" "></a>
+   {% endfor %}
+{% endblock %}
+
+{% block general_head %}
+        {% for school_general_information in generih %}
+        <ul>
+        <li><i class="fa fa-phone" aria-hidden="true"></i> <strong>{{ school_general_information.school_phone_number|safe }}</strong></li>
+        <li><img alt="Kakamega school  email address" src="{{ school_general_information.mail_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_emailaddress }}</strong></li>
+          <li><img alt="Kakamega school  postal address" src="{{ school_general_information.address_icon.url }}" height="20" width="20" alt=" ">&emsp; <strong>{{ school_general_information.school_address }}</strong></li>
+        </ul>
+        {% endfor %}
+{% endblock %}
+
+{% block social_links %}
+  <nav class="social">
+  <ul>
+    {% for school_general_information in generih %}
+    <li class="w3_twitter"><a href="{{ school_general_information.school_twitterlink }}" target="_blank">Twitter <i class="fa fa-twitter"></i></a></li>
+    <li class="w3_facebook"><a href="{{ school_general_information.school_facebooklink }}" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
+    {% endfor %}
+  </ul>
+  </nav>
+{% endblock %}
+
+{% block home_content %}
+		<h4 class="latest-text w3_latest_text"><strong>Kakamega school </strong></h4>
+		<div class="container">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li class="active" role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">School Background</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+						<div class="w3_agile_featured_movies">
+              {% for school_history in history %}
+							<div class="wthree-news-left">
+								<div class="wthree-news-left-img">
+                  <img alt="Kakamega school  history photo" src="{{ school_history.photo.url }}" width="100%" height="auto" alt="" />
+									<div class="w3-agile-news-text">
+                    <br/><p style="font-size:17px; width:100%; color:black; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em; "><strong>{{ school_history.text|safe }}</strong></p>
+                  {% endfor %}
+                  <br/>
+                  <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">School Heads Data</a></li>
+                  </ul>
+                    <!-- school heads --> 
+                   <div class="agile-news-table">
+                    <div style="overflow-x:auto;" >
+                    <table >
+                      <thead>
+                        <tr style="opacity:0.8; font-size:20px; width:100%; font-color:#fffff; background-color:#000000; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;">
+                          <th ><center><strong>Name of School Head</strong></center></th>
+                          <th ><center>From (Year)</center></th>
+                          <th ><center>To (Year)</center></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+              
+                        {% for school_previous_heads in head %}
+                        <tr style="opacity:0.8; font-size:20px; width:100%; color:#ffffff; background-color:#2b7f43; border-bottom-left-radius:0.5em; border-bottom-right-radius:0.5em; border-top-right-radius:0.5em; border-top-left-radius:0.5em;">
+                        <td ><center><a style="color:#ffffff;"href=""><br/>{{ school_previous_heads.school_head }}</a></center></td>
+                        <td ><center><a style="color:#ffffff;" href=""><br/>{{ school_previous_heads.start_year }}</a></center></td>
+                        <td><center><a style="color:#ffffff;" href=""><br/>{{ school_previous_heads.end_year }}</a></center></td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                    </div>
+                  </div>
+                   <!-- //school heads -->
+									</div>
+                  <div id="fb-root"></div>
+
+								</div>
+							</div>
+
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
+

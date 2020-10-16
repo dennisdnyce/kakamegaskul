@@ -1,0 +1,415 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Kakamega school  | In Unity is Strength</title>
+<!-- favicon -->
+<link rel="icon" href="{% static 'images/kakamega_icon.ico' %}" />
+<!-- //favicon -->
+
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Kakamega School, formerly known as Government African School Kakamega and Kakamega High School, is a four-year high school in Kakamega, Kenya, founded in 1932. It is categorized by the Ministry of Education as a national school." />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Kakamega school , Kakamega Boys High School, Boys High School Kakamega, Kakamega School, Boys High School of Kakamega, Kakamega School website, Kakamega school  website, Kakamega Boys High School website, Kakamega Boys Kakamega county, In Unity Is Strength" />
+<link rel="canonical" href="http://kakamegaschool.sc.ke/" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/contactstyle.css' %}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/faqstyle.css' %}" type="text/css" media="all" />
+<link href="{% static 'css/single.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/medile.css' %}" rel='stylesheet' type='text/css' />
+<!-- banner-slider -->
+<link href="{% static 'css/jquery.slidey.min.css' %}" rel="stylesheet">
+<!-- //banner-slider -->
+<!-- pop-up -->
+<link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- //pop-up -->
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/rvslider.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/rvslider.css' %}" />
+<!-- //font-awesome icons -->
+<!-- js -->
+<script type="text/javascript" src="{% static 'js/rvslider.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/rvslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<!-- //js -->
+<!-- banner-bottom-plugin -->
+<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css" media="all">
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script>
+	$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+
+		  autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+		  items : 5,
+		  itemsDesktop : [640,4],
+		  itemsDesktopSmall : [414,3]
+
+		});
+
+	});
+</script>
+<!-- //banner-bottom-plugin -->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+
+<style>
+	table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: ;
+
+}
+
+	.dropdown-submenu {
+		position: relative;
+	}
+	
+	.dropdown-submenu>.dropdown-menu {
+		top: 0;
+		left: 100%;
+		margin-top: -6px;
+		margin-left: -1px;
+		-webkit-border-radius: 0 6px 6px 6px;
+		-moz-border-radius: 0 6px 6px;
+		border-radius: 0 6px 6px 6px;
+	}
+	
+	.dropdown-submenu:hover>.dropdown-menu {
+		display: block;
+	}
+	
+	.dropdown-submenu>a:after {
+		display: block;
+		content: " ";
+		float: right;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+		border-width: 5px 0 5px 5px;
+		border-left-color: #ccc;
+		margin-top: 5px;
+		margin-right: -10px;
+	}
+	
+	.dropdown-submenu:hover>a:after {
+		border-left-color: #fff;
+	}
+	
+	.dropdown-submenu.pull-left {
+		float: none;
+	}
+	
+	.dropdown-submenu.pull-left>.dropdown-menu {
+		left: -100%;
+		margin-left: 10px;
+		-webkit-border-radius: 6px 0 6px 6px;
+		-moz-border-radius: 6px 0 6px 6px;
+		border-radius: 6px 0 6px 6px;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<div class="w3layouts_logo">
+				{% block logo %}
+				{% endblock %}
+				 <p style="color: #2b7f43; margin-left: 15px;"><strong>Kakamega<font style="color: #f3f1f1;">_</font>School</strong></p>
+			</div>
+			<br/>
+	
+			<div class="w3_search" style="margin-left:;">
+				 <p style="font-size:20px; margin-left:15px;"><img height="50px" width="50px" src="{% static 'images/rib.jpg' %}" />IN<font style="color: #f3f1f1;">_</font>UNITY<font style="color: #f3f1f1;">_</font>IS<font style="color: #f3f1f1;">_</font>STRENGTH<img height="50px" width="50px" src="{% static 'images/rib.jpg' %}" /></p>
+                         <p style=""><img height="100px" width="400px" src="{% static 'images/yellows.jpg' %}" /></p>  
+			</div>
+			<div class="w3l_sign_in_register">
+				{% block general_head %}
+				{% endblock %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- bootstrap-pop-up -->
+
+	<script>
+		$('.toggle').click(function(){
+		  // Switches the Icon
+		  $(this).children('i').toggleClass('fa-pencil');
+		  // Switches the forms
+		  $('.form').animate({
+			height: "toggle",
+			'padding-top': 'toggle',
+			'padding-bottom': 'toggle',
+			opacity: "toggle"
+		  }, "slow");
+		});
+	</script>
+<!-- //bootstrap-pop-up -->
+<!-- nav -->
+
+<!-- //nav -->
+
+<!-- //naver demo start -->
+
+<div class="movies_nav" role="navigation">
+    <div class="container">
+			<nav class="navbar navbar-default">
+        <div class="navbar-header navbar-left">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+                    <ul class="dropdown-menu multi-level">
+                        <li><a href="{% url 'philosophy' %}"><b>Our Philosophy</b></a></li>
+												<li><a href="{% url 'location' %}"><b>Location</b></a></li>
+												<li><a href="{% url 'history' %}"><b>History</b></a></li>
+												<li class="dropdown-submenu">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Management</a>
+														<ul class="dropdown-menu">
+																<li><a href="{% url 'bog' %}"><b>BOG</b></a></li>
+																<li><a href="{% url 'pta' %}"><b>PTA</b></a></li>
+														</ul>
+												</li>
+												<li class="dropdown-submenu">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration</a>
+														<ul class="dropdown-menu">
+															 <li><a href="{% url 'principal' %}"><b>principal</b></a></li>
+															 <li><a href="{% url 'deputies' %}"><b>deputies</b></a></li>
+															 <li><a href="{% url 'hods' %}"><b>HODs</b></a></li>
+															 <li><a href="{% url 'teachers' %}"><b>Teachers</b></a></li>
+															 <li><a href="{% url 'students' %}"><b>Student Council</b></a></li>
+														</ul>
+												</li>
+                    </ul>
+                </li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Performance<b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<li>
+										<div class="col-sm-4">
+											<ul class="multi-column-dropdown">
+												<li><a href="{% url 'performance' %}"><b>K.C.S.E<font style="color: #ffffff;">_</font>trends</b></a></li>
+												<li><a href="{% url 'university' %}"><b>University<font style="color: #ffffff;">_</font>Entry</b></a></li>
+											</ul>
+										</div>
+
+										<div class="clearfix"></div>
+										</li>
+									</ul>
+								</li>
+								<li>
+				                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departments<b class="caret"></b></a>
+				                    <ul class="dropdown-menu multi-level">
+																<li class="dropdown-submenu">
+																		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Academic</a>
+																		<ul class="dropdown-menu">
+																				<li><a href="{% url 'languages' %}"><b>Languages</b></a></li>
+																				<li><a href="{% url 'mathematics' %}"><b>Mathematics</b></a></li>
+																				<li><a href="{% url 'sciences' %}"><b>Sciences</b></a></li>
+																				<li><a href="{% url 'humanities' %}"><b>Humanities</b></a></li>
+																				<li><a href="{% url 'technicals' %}"><b>Technicals</b></a></li>
+																		</ul>
+																</li>
+																<li class="dropdown-submenu">
+																		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Non-Academic</a>
+																		<ul class="dropdown-menu">
+																			 <li><a href="{% url 'boarding' %}"><b>Boarding</b></a></li>
+																			 <li><a href="{% url 'guidance' %}"><b>Guiding and Counseling</b></a></li>
+																		</ul>
+																</li>
+																<li class="dropdown-submenu">
+																		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Curricular</a>
+																		<ul class="dropdown-menu">
+																		   <li><a href="{% url 'games' %}"><b>Games</b></a></li>
+																		   <li><a href="{% url 'drama' %}"><b>Drama club</b></a></li>
+																		   <li><a href="{% url 'music' %}"><b>Music club</b></a></li>
+																		   <li><a href="{% url 'sports' %}"><b>Sports club</b></a></li>
+																		   <li><a href="{% url 'christianunion' %}"><b>Christian Union</b></a></li>
+																		   <li><a href="{% url 'muslimstudents' %}"><b>Muslim Students</b></a></li>
+																		   <li><a href="{% url 'journalism' %}"><b>Journalism club</b></a></li>
+																		   <li><a href="{% url 'debate' %}"><b>Debate club</b></a></li>
+																		   <li><a href="{% url 'scienceengineering' %}"><b>Science/Engineering</b></a></li>
+																		   <li><a href="{% url 'peace' %}"><b>Peace club</b></a></li>
+																		</ul>
+																</li>
+				                    </ul>
+				                </li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Facilities<b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<li>
+										<div class="col-sm-4">
+											<ul class="multi-column-dropdown">
+												<li><a href="{% url 'library' %}"><b>Library</b></a></li>
+												<li><a href="{% url 'laboratories' %}"><b>Laboratories</b></a></li>
+												<li><a href="{% url 'dininghall' %}"><b>Dining<font style="color: #ffffff;">_</font>Hall</b></a></li>
+												<li><a href="{% url 'classrooms' %}"><b>Classrooms</b></a></li>
+												<li><a href="{% url 'transport' %}"><b>Transport</b></a></li>
+												<li><a href="{% url 'schoolfence' %}"><b>School<font style="color: #ffffff;">_</font>Fence</b></a></li>
+												<li><a href="{% url 'forest' %}"><b>Forest</b></a></li>
+												<li><a href="{% url 'bakery' %}"><b>Bakery</b></a></li>
+												<li><a href="{% url 'carpark' %}"><b>Car<font style="color: #ffffff;">_</font>Park</b></a></li>
+												<li><a href="{% url 'beautification' %}"><b>Beautification</b></a></li>
+												<li><a href="{% url 'generator' %}"><b>Generator</b></a></li>
+											</ul>
+										</div>
+										<div class="clearfix"></div>
+										</li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Students Info<b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<li>
+										<div class="col-sm-4">
+											<ul class="multi-column-dropdown">
+												<li><a href="{% url 'alumnae' %}" ><b>alumni</b></a></li>
+												<li><a href="{% url 'downloads' %}"><b>downloads</b></a></li>
+											</ul>
+										</div>
+										<div class="clearfix"></div>
+										</li>
+									</ul>
+								</li>
+								<ul class="nav navbar-nav">
+					                <li><a href="{% url 'contact' %}">Our Contacts</a></li>
+								</ul>
+
+            </ul>
+        </div>
+			</nav><!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- //naver demo end -->
+
+
+<!-- banner -->
+{% block slide_content %}
+{% endblock %}
+
+
+<!-- //banner -->
+<!-- banner-bottom -->
+
+{% block updates %}
+{% endblock %}
+
+
+<!-- //banner-bottom -->
+<div class="general_social_icons">
+{% block social_links %}
+{% endblock %}
+</div>
+<!-- general -->
+	<div class="general">
+{% block home_content %}
+{% endblock %}
+	</div>
+<!-- //general -->
+<!-- Latest-tv-series -->
+
+<!-- //Latest-tv-series -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-5 w3ls_footer_grid1_left">
+				<p>Copyright &copy; <script>document.write( new Date().getFullYear() );</script> <br/> All Rights Reserved. Designed by <a href="http://phs.africa" target="_blank">phs</a></p>
+			</div>
+			<div class="col-md-7 w3ls_footer_grid1_right">
+				<ul>
+					<li><br/>
+						<a href="{% url 'anthem' %}">The Warriors' Way</a>
+					</li>
+					<li><br/>
+						<a href="{% url 'contact' %}">Our Contact Information</a>
+					</li>
+					<li><br/>
+						<a href="{% url 'corevalues' %}">Our Core Values</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
+});
+</script>
+<!-- //Bootstrap Core JavaScript -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>
