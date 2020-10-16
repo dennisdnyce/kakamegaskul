@@ -70,16 +70,6 @@ input[type="submit"],.agileinfo_chat a,.w3ls_footer_grid1_left p a,.w3l_sign_in_
     animation-iteration-count: infinite;
 }
 
-<<<<<<< HEAD
-@keyframes example {
-  0%   {color: #2b7f43;}
-  25%  {color: red;}
-  50%  {color: maroon;}
-  100% {color: green;}
-}
-=======
->>>>>>> 6366b1912848e4d82077d283e1dba0403760f819
-
 .w3_search input[type="text"]{
 	outline: none;
     border: none;
